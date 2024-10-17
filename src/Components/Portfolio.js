@@ -2,22 +2,15 @@ import React from "react";
 
 const Portfolio = ({ data }) => {
   if (data) {
-    var projects = data.projects.map(function (projects) {
-      var projectImage = "images/portfolio/" + projects.image;
+    var projects = data.projects.map(function (project) {
       return (
-        <div key={projects.title} className="columns portfolio-item">
-          <div className="item-wrap">
-            <a href={projects.url} title={projects.title}>
-              <img alt={projects.title} src={projectImage} />
-              <div className="overlay">
-                <div className="portfolio-item-meta">
-                  <h5>{projects.title}</h5>
-                  <p>{projects.category}</p>
-                </div>
-              </div>
-              <div className="link-icon">
-                <i className="fa fa-link"></i>
-              </div>
+        <div key={project.title} className="card">
+          <img src={project.image} alt={project.title} className="card-image" />
+          <div className="card-content">
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            <a href={project.url} target="_blank" className="read-more">
+              See Project <span className="arrow">→</span>
             </a>
           </div>
         </div>
@@ -27,18 +20,8 @@ const Portfolio = ({ data }) => {
 
   return (
     <section id="portfolio">
-      <div className="row">
-        <div className="twelve columns collapsed">
-          <h1>Check Out Some of My Works.</h1>
-
-          <div
-            id="portfolio-wrapper"
-            className="bgrid-quarters s-bgrid-thirds cf"
-          >
-            {projects}
-          </div>
-        </div>
-      </div>
+      <h1>Check Out Some of My Projects</h1>
+      <div className="portfolio-container">{projects}</div>
     </section>
   );
 };

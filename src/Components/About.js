@@ -25,7 +25,7 @@ const About = ({ data }) => {
           />
         </div>
         <div className="nine columns main-col">
-          <h2>About Me</h2>
+          <h2>Professional Summary</h2>
 
           <p>{bio}</p>
           <div className="row">
@@ -47,8 +47,8 @@ const About = ({ data }) => {
             </div>
             <div className="columns download">
               <p>
-                <a href={resumeDownload} className="button">
-                  <i className="fa fa-download"></i>Download Resume
+                <a href={resumeDownload} target="_blank" className="button">
+                  <i className="fa fa-download"></i>Get My Resume
                 </a>
               </p>
             </div>

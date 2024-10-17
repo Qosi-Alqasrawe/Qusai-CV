@@ -27,6 +27,27 @@ const Resume = ({ data }) => {
         </div>
       );
     });
+    var Certifications = data.Certifications.map(function (Certifications) {
+      return (
+        <div key={Certifications.a}>
+          <h3>{Certifications.nameofcertifications}</h3>
+          <p className="info">
+            {Certifications.giventhecertifications} <span>&bull;</span>
+            {Certifications.idofCertifications}
+          </p>
+          <p>{Certifications.descriptionofcertifications}</p>
+        </div>
+      );
+    });
+    var Achievements = data.Achievements.map(function (Achievements) {
+      return (
+        <div key={Achievements.Achive}>
+          <p className="info">
+            <h4>{Achievements.Achive}</h4> {Achievements.Achivedes}
+          </p>
+        </div>
+      );
+    });
     var skills = data.skills.map(function (skills) {
       var className = "bar-expand " + skills.name.toLowerCase();
       return (
@@ -62,6 +83,26 @@ const Resume = ({ data }) => {
         </div>
 
         <div className="nine columns main-col">{work}</div>
+      </div>
+      
+      <div className="row work">
+        <div className="three columns header-col">
+          <h1>
+            <span>Certifications</span>
+          </h1>
+        </div>
+
+        <div className="nine columns main-col">{Certifications}</div>
+      </div>
+      
+      <div className="row work">
+        <div className="three columns header-col">
+          <h1>
+            <span>Achievements</span>
+          </h1>
+        </div>
+
+        <div className="nine columns main-col">{Achievements}</div>
       </div>
 
       <div className="row skill">
